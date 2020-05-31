@@ -1,0 +1,66 @@
+<div class="container">
+<div class="card my-5">
+    <div class="card-header bleu">
+  Gestion Matchs
+  </div>
+    <div class="card-body">
+        <br>
+        <table align="center">
+            <tr>
+                <td>
+                    <button  class="btn btn-primary"  (click)="onGetMatchs()">Liste Matchs</button>
+                </td>
+                <td>
+                    <a type="button"  routerLink="/ajoutermat" class="btn btn-success" >Ajouter Match</a>
+                </td>
+            </tr>
+         </table>
+         <br><br>
+        
+        <table *ngIf="jeus" class="table  table-striped">
+            <thead class="scope">
+                <tr>  
+                    <th scope="col">Id</th>
+                    <th scope="col">Duree</th>
+                    <th scope="col">Espace</th>
+                    <th scope="col">Lieu</th>
+                    <th scope="col"  >Modifier</th>
+                      <th scope="col"  >Supprimer</th>
+                    
+                    
+                
+
+    
+                </tr>
+            </thead>
+    <tbody>
+        <tr *ngFor="let mat of jeus ;let j=index">
+            <td>{{ mat.	id }}</td>
+            <td>{{ mat.duree }}</td>
+             <td>{{ mat.espace }}</td>
+             <td>{{ mat.lieu }}</td>
+             
+                        <td>
+                            <button type="button" class="btn btn-info"[routerLink]="['/modifiermatch',mat.id]" >Modifier</button>
+                        </td>
+                        <td>
+                            <button type="button"  class="btn btn-danger" (click)="onDeleteMatch( mat.id )">Delete</button>
+                        </td>
+                    
+                       
+         </tr>
+     
+    
+    
+        
+    </tbody>
+        </table>
+       
+           
+    </div>
+    <div class="card-footer text-muted">
+        <br>
+      </div>
+    
+    </div>
+    </div>

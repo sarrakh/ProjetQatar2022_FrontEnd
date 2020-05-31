@@ -1,0 +1,61 @@
+
+
+<div class="container">
+    <div class="col-md col-sm col-xs-12">
+      <div class="card my-5">
+      <div class="card-header bleu">Modifier Arbitre
+       </div>
+    
+      
+       <div class="card-body" >
+        <form  (ngSubmit)="onSubmit()">
+          <div class="form-groupe">
+            <label class="controle-label"> Id</label>
+            <input class="form-control" readonly="readonly" type="text" name="id" ngModel [(ngModel)]="arbitre.id">
+          </div>
+            <div class="form-groupe">
+        <label class="controle-label"> Nom</label>
+        <input class="form-control" type="text" name="nom" ngModel [(ngModel)]="arbitre.nom">
+      </div>
+      <div class="form-groupe">
+        <label class="controle-label"> Prénom</label>
+        <input class="form-control" type="text" name="prenom" ngModel [(ngModel)]="arbitre.prenom">
+      </div>
+      <div class="form-groupe">
+        <label class="controle-label"> Age</label>
+        <input class="form-control" type="number" name="age" ngModel [(ngModel)]="arbitre.age">
+      </div>
+      <div class="form-groupe">
+        <label class="controle-label"> Nationnalite</label>
+        <input class="form-control" type="text" name="nationnalite" ngModel [(ngModel)]="arbitre.nationnalite">
+      </div>
+      <div class="form-groupe">
+        <label class="controle-label">Cin </label>
+        <input class="form-control" type="number" name="cin" ngModel [(ngModel)]="arbitre.cin">
+      </div>
+      <div class="form-groupe"  >
+        <label class="controle-label">Match </label>
+        
+        <select class="form-control" name ="jeus"  ngModel [(ngModel)]="arbitre.jeus.id">
+          <option>Selectionner un Match</option>
+          <option *ngFor="let t of matchs " [value]="t.id">{{t.lieu}} </option>
+      </select>
+       
+      </div>
+      <br>
+
+       <button class="btn btn-success" type="submit" >Update</button>
+       <button class="btn btn-danger" routerLink="/arbitres" >Annuler</button>
+      
+        </form>
+      </div>
+      <div class="card-footer text-muted">
+        <br>
+       </div> 
+    </div>
+  </div>
+  </div>
+  
+  
+  
+  

@@ -1,0 +1,69 @@
+
+<div class="container" >
+<div class="card my-5">
+    <div class="card-header bleu" >Gestion Arbitres </div>
+    <div class="card-body">
+     <br>
+        <table align="center">
+            <tr>
+                <td>
+                    <button  class="btn btn-primary" (click)="onGetArbitres()">Liste Arbitres</button>
+                </td>
+                <td>
+                    <a type="button"  routerLink="/ajouterArb" class="btn btn-success" >Ajouter Arbitres</a>
+                </td>
+            </tr>
+         </table>
+         <br>
+        
+         <br>
+        <table *ngIf="arbitres" class="table  table-striped">
+            <thead class="scope">
+                <tr>  
+                    <th scope="col">Id</th>
+                    <th scope="col">Nom</th>
+                    <th scope="col">prenom</th>
+                    <th scope="col">Cin</th>
+                    <th scope="col">Age</th>
+                    <th scope="col">Nationnalite</th>
+                    <th scope="col">Match Lieu</th>
+
+                    <th scope="col"  >Modifier</th>
+                      <th scope="col"  >Supprimer</th>
+
+    
+                </tr>
+            </thead>
+        
+      <tbody>
+        <tr *ngFor="let arb of arbitres ;let j=index">
+            <td>{{ arb.id }}</td>
+            <td>{{ arb.nom }}</td>
+            <td>{{ arb.prenom }}</td>
+             <td>{{ arb.cin }}</td>
+             <td>{{ arb.age }}</td>
+             
+            <td>{{ arb.nationnalite }}</td>
+            <td>{{ arb.jeus.lieu }}</td>
+            
+                    <td>
+                 <button type="button" class="btn btn-info" [routerLink]="['/modifierArb',arb.id]">Modifier</button>
+                    </td>
+                    <td>
+                        <button type="button"  class="btn btn-danger" (click)="onDeleteArbitre(arb.id)">Delete</button>
+                    </td>
+               
+        </tr>
+      </tbody>
+        </table>
+   
+           
+    </div>
+      <div class="card-footer text-muted">
+        <br>
+       </div> 
+ </div>
+    
+  </div>
+    
+    

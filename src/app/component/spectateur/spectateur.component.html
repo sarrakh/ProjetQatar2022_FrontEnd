@@ -1,0 +1,70 @@
+
+<div class="container">
+  <div class="card my-5">
+      <div class="card-header ">
+          Gestion Spectateurs
+         </div>
+      <div class="card-body">
+       <br>
+          <table align="center">
+              <tr>
+                  <td>
+                      <button  class="btn btn-primary" (click)="onGetSpectateurs()">Liste Spectateurs</button>
+                  </td>
+                  <td>
+                      <a type="button"  routerLink="/ajouterspec" class="btn btn-success" >Ajouter Spectateurs</a>
+                  </td>
+              </tr>
+           </table>
+          
+           <br><br>
+          <table *ngIf="spectateurs" class="table  table-striped">
+              <thead class="scope">
+                  <tr>  
+                      <th scope="col">Id</th>
+                      <th scope="col">Nom</th>
+                     
+                      <th scope="col">Cin</th>
+                      <th scope="col">Num passaport</th>
+                      <th scope="col">Match Lieu</th>
+                     
+                      <th scope="col"  >Modifier</th>
+                      <th scope="col"  >Supprimer</th>
+  
+      
+                  </tr>
+              </thead>
+          
+        <tbody>
+          <tr *ngFor="let spec of spectateurs; let j=index">
+              <td>{{ spec.id }}</td>
+              <td>{{ spec.nom }}</td>
+             
+               <td>{{ spec.cin }}</td>
+               <td>{{ spec.num_passaport }}</td>
+               <td>{{ spec.jeus.lieu }}</td>
+              
+              
+                      <td>
+                          <button type="button" class="btn btn-info"[routerLink]="['/modifierspectateur',spec.id]">Modifier</button>
+                      </td>
+                      <td>
+                          <button type="button"  class="btn btn-danger" (click)=" onDeleteSpectateur(spec.id)">Delete</button>
+                      </td>
+                  
+      
+              
+          </tr>
+        </tbody>
+          </table>
+          
+             
+      </div>
+        <div class="card-footer text-muted">
+          <br>
+         </div> 
+   </div>
+      
+    </div>
+      
+      

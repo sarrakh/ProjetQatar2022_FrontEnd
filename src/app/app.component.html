@@ -1,0 +1,66 @@
+<div id="app">
+  <nav class="navbar navbar-expand navbar-dark bg-dark">
+    
+    <ul class="navbar-nav mr-auto" routerLinkActive="active">
+      <li class="nav-item">
+        <a href="/home" class="nav-link" routerLink="home">Home </a>
+      </li>
+     
+      <li class="nav-item" *ngIf="showAdminBoard">
+        <a href="/joueurs" class="nav-link" routerLink="/joueurs">Joueurs </a>
+        
+      </li>
+      <li class="nav-item" *ngIf="showAdminBoard">
+        <a href="/arbitres" class="nav-link" routerLink="/arbitres">Arbitres </a>
+        
+      </li>
+      <li class="nav-item" *ngIf="showAdminBoard">
+        <a href="/spectateurs" class="nav-link" routerLink="/spectateurs">Spectateurs </a>
+        
+      </li>
+      <li class="nav-item" *ngIf="showAdminBoard">
+        <a href="/matchs" class="nav-link" routerLink="/matchs">Matchs </a>
+        
+      </li>
+      <li class="nav-item" *ngIf="showAdminBoard">
+        <a href="/equipes" class="nav-link" routerLink="/equipes">Equipes </a>
+        
+      </li>
+     
+    </ul>
+
+    <ul class="navbar-nav ml-auto" *ngIf="!isLoggedIn">
+      <li class="nav-item">
+        <a href="/register" class="nav-link" routerLink="register">Sign Up</a>
+      </li>
+      <li class="nav-item">
+        <a href="/login" class="nav-link" routerLink="login">Login</a>
+      </li>
+     
+    
+    </ul>
+
+    <ul class="navbar-nav ml-auto" *ngIf="isLoggedIn">
+      <li class="nav-item">
+        <a href="/profile" class="nav-link" routerLink="profile">{{ username }}</a>
+      </li>
+      <li class="nav-item">
+        <a href class="nav-link" (click)="logout()">LogOut</a>
+      </li>
+    </ul>
+  </nav>
+
+  <div class="container">
+    <h1 align ="center" class="my-4">Welcom To world Cup Qatar 2022 </h1>
+    <router-outlet></router-outlet>
+  </div>
+</div>
+<footer class="page-footer font-small black">
+
+  <!-- Copyright -->
+  <div class="footer-copyright text-center py-3">© 2020 Copyright:
+    <a href="#"> Sarra Khiari</a>
+  </div>
+  <!-- Copyright -->
+
+</footer>

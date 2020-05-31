@@ -1,0 +1,41 @@
+
+
+<div class="container">
+  <div class="col-md col-sm col-xs-12">
+    <div class="card my-5">
+    <div class="card-header bleu">Ajouter Match
+     </div>
+  
+    
+     <div class="card-body">
+      <form #f="ngForm" (ngSubmit)="OnSaveMatch(f.value)">
+     <div class="form-groupe">
+      <label class="controle-label"> Lieu</label>
+      <input class="form-control" type="text" name="lieu" ngModel>
+    </div>
+    <div class="form-groupe">
+      <label class="controle-label"> Durée</label>
+      <input class="form-control" type="text" name="duree" ngModel>
+    </div>
+    <div class="form-groupe">
+      <label class="controle-label"> Espace</label>
+      <input class="form-control" type="text" name="espace" ngModel>
+    </div>
+    
+    
+    
+    <br>
+     <button class="btn btn-success" type="submit" >Enregistrer</button>
+     <button class="btn btn-danger" routerLink="/matchs"  >Annuler</button>
+    
+      </form>
+    </div>
+    <div class="card-footer text-muted">
+      <br>
+     </div> 
+  </div>
+</div>
+</div>
+
+
+

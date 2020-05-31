@@ -1,0 +1,69 @@
+<div class="container">
+<div class="card my-5">
+    <div class="card-header bleu">
+        Gestion Joueurs
+       </div>
+    <div class="card-body">
+        <br>
+        <table align="center">
+            <tr>
+                <td>
+                    <button class="btn btn-primary" (click)="onGetJoueurs()">Liste Joueurs</button>
+                </td>
+                <td>
+                    <a type="button"  routerLink="/ajouterjor" class="btn btn-success" >Ajouter Joueur</a>
+                </td>
+            </tr>
+         </table>
+         <br><br>
+           <table *ngIf="joueurs" class="table  table-striped">
+            <thead class="scope">
+                <tr>  
+                    <th scope="col">ID</th>
+                    <th scope="col">Nom</th>
+                    <th scope="col">Prénom</th>
+                    <th scope="col">Age</th>
+                    <th scope="col">Cin</th>
+                    <th scope="col">Nationnalite</th>
+                    
+                    <th scope="col">Equipe</th>
+
+
+                    
+
+                    <th scope="col"  >Modifier</th>
+                    <th scope="col"  >Supprimer</th>
+    
+                </tr>
+            </thead>
+    <tbody>
+        <tr *ngFor="let jor of joueurs ; let j=index">
+            <td>{{ jor.id }}</td>
+            <td>{{ jor.nom }}</td>
+            <td>{{ jor.prenom }}</td>
+            <td>{{ jor.age }}</td>
+            <td>{{ jor.cin }}</td>
+            <td>{{ jor.nationnalite }}</td>
+            
+            <td>{{ jor.equipes.nom }}</td>
+            
+            
+            <td> <button type="button" class="btn btn-info" [routerLink]="['/modifierJor',jor.id]" >Modifier</button> </td>
+ <td><button type="button"  class="btn btn-danger" (click)="onDeleteJoueur(jor.id)">Delete</button></td>
+                    
+    
+    
+    
+    
+        </tr>
+    </tbody>
+        </table>
+       
+       
+    </div>
+    <div class="card-footer text-muted">
+        <br>
+      </div>
+   </div> 
+    </div>
+    

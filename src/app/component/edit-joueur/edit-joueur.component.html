@@ -1,0 +1,60 @@
+
+
+<div class="container">
+    <div class="col-md col-sm col-xs-12">
+      <div class="card my-5">
+      <div class="card-header bleu">Modifier Joueur
+       </div>
+    
+      
+       <div class="card-body">
+        <form #f="ngForm" (ngSubmit)="onSubmit()">
+          <div class="form-groupe">
+            <label class="controle-label"> Id</label>
+            <input class="form-control"  readonly="readonly" type="text" name="id" ngModel [(ngModel)]="joueur.id">
+          </div>
+            <div class="form-groupe">
+        <label class="controle-label"> Nom</label>
+        <input class="form-control" type="text" name="nom" ngModel [(ngModel)]="joueur.nom">
+      </div>
+      <div class="form-groupe">
+        <label class="controle-label"> Prénom</label>
+        <input class="form-control" type="text" name="prenom" ngModel [(ngModel)]="joueur.prenom">
+      </div>
+      <div class="form-groupe">
+        <label class="controle-label"> Age</label>
+        <input class="form-control" type="number" name="age" ngModel [(ngModel)]="joueur.age">
+      </div>
+      <div class="form-groupe">
+        <label class="controle-label"> Nationnalite</label>
+        <input class="form-control" type="text" name="nationnalite" ngModel [(ngModel)]="joueur.nationnalite">
+      </div>
+      <div class="form-groupe">
+        <label class="controle-label">Cin </label>
+        <input class="form-control" type="number" name="cin" ngModel [(ngModel)]="joueur.cin">
+      </div>
+      
+      <div class="form-groupe"  >
+        <label class="controle-label">Equipe </label>
+        
+        <select class="form-control" name ="equipes"  ngModel  [(ngModel)]="joueur.equipes.id">
+          <option>Selectionner une Equipe</option>
+          <option *ngFor="let t of equipes " [value]="t.id">{{t.nom}} </option>
+      </select>
+       
+      </div>
+      <br>
+       <button class="btn btn-success" type="submit" >Update</button>
+       <button class="btn btn-danger" routerLink="/joueurs"  >Annuler</button>
+        </form>
+      </div>
+      <div class="card-footer text-muted">
+        <br>
+       </div> 
+    </div>
+  </div>
+  </div>
+  
+  
+  
+  
